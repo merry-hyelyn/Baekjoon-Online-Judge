@@ -11,5 +11,5 @@
 n = int(input())
 # num = list(map(int, input().split()))
 
-num = [x for _ in range(n)]
+num = [x for _ in int(input())]
 print(min(num), max(num))
