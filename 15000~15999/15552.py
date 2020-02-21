@@ -25,3 +25,11 @@ t = int(input())
 for i in range(t):
     a,b = map(int, sys.stdin.readline().split())
     print(a+b)
+
+"""
+import sys
+
+n = input()
+a=[sys.stdin.readlint() for i in range(n)]
+print sum(list(map(int,a)))-n+1
+"""
