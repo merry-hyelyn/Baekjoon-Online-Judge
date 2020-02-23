@@ -12,8 +12,13 @@
 
 # 출력
 # 첫째 줄에 최댓값을 출력하고, 둘째 줄에 최댓값이 몇 번째 수인지를 출력한다.
-num = []
-for i in range(9):
-    num.append(int(input()))
 
+
+# num = []
+# for i in range(9):
+#     num.append(int(input()))
+
+# print(max(num), num.index(max(num)) + 1)
+
+num = [int(input()) for i in range(9)]
 print(max(num), num.index(max(num)) + 1)
