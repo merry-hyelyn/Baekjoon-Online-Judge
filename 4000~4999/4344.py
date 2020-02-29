@@ -13,6 +13,9 @@
 for i in range(int(input())):
     score = list(map(int, input().split()))
     avg = sum(score[1:]) / score[0]
-    num = len(list(filter(lambda x: x > avg, score)))
-
-    print("%0.3f" % round(num / score[0] * 100, 3) + "%")
+    # num = len(list(filter(lambda x: x > avg, score)))
+    num = 0
+    for k in score[1:]:
+        if avg < k:
+            num += 1
+    print("%.3f" % round(num / score[0] * 100, 3) + "%")
