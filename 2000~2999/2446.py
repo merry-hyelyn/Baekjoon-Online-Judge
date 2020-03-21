@@ -37,8 +37,7 @@ for j in range(i, k + 1, 2):
 """
 num = int(input())
 for n in range(-num+1,num):
-	print(' '*(num-abs(n)-1) + '*'*(2*abs(n)+1))
+    print(' '*(num-abs(n)-1) + '*'*(2*abs(n)+1))
 
 abs 함수는 숫자의 절댓값을 반환해주는 함수
 """
-
