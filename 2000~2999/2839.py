@@ -20,8 +20,8 @@
 
 n = int(input())
 result = []
-a = 1
-for i in range(n // 3):
+a = 0
+for i in range(n // 3 + 1):
     k = n - a * 3
     if k % 5 == 0:
         b = k // 5
