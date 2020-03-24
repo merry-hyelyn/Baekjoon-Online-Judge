@@ -8,9 +8,9 @@
 # 출력
 # 주어진 수들 중 소수의 개수를 출력한다.
 
-num = [int(x) for x in input().split()]
+n = int(input())
+num = list(map(int, input().split()))
 s = []
-print(num)
 for k in num:
     count = 0
     for j in range(1, k + 1):
