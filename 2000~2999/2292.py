@@ -14,7 +14,7 @@
 
 n = int(input())
 i = 1
-count = 1
+count = 0
 room = 1
 while True:
     if i == n or i > n:
