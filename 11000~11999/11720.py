@@ -21,10 +21,3 @@ n = int(input())
 x = map(int, input())
 print(sum(x))
 """
-
-"""
-11718.py
-words = [input() for i in range(3)]
-for word in words:
-    print(word)
-"""
