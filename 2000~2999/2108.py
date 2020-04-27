@@ -25,22 +25,27 @@
 
 # 넷째 줄에는 범위를 출력한다.
 
-num = [int(input()) for i in range(int(input()))]
+import sys
+
+n = int(sys.stdin.readline())
+num = [int(sys.stdin.readline()) for i in range(int(n))]
 num.sort()
-length = len(num)
-print(sum(num) // length)
-print(num[(length // 2)])
+scale = num[-1] - num[0]
+print(round(sum(num) / n))
+print(num[(n // 2)])
 
 m = 0
 mi = []
 for i in num:
     if num.count(i) >= m:
         m = num.count(i)
+        num.remove(i)
         mi.append(i)
 
 if len(mi) >= 2:
-    mi.remove(min(mi))
-print(min(mi))
+    print(mi[1])
 
-print(max(num) - min(num))
+else:
+    print(mi[0])
 
+print(scale)
