@@ -12,6 +12,11 @@
 # 출력
 # 조건에 따라 정렬하여 단어들을 출력한다. 단, 같은 단어가 여러 번 입력된 경우에는 한 번씩만 출력한다.
 
+from operator import itemgetter
+
 word = [input() for i in range(int(input()))]
-word.sort(key=lambda w: len(w))
+for w in word:
+    if word.count(w) >= 2:
+        word.remove(w)
+word.sort(key=lambda x: len(x))
 print(word)
