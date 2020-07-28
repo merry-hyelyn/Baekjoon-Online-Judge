@@ -16,8 +16,22 @@
 # 출력
 # 각각의 Test case에 대해서 해당 집에 거주민 수를 출력하라.
 
+def people_sum(k, n):
+    q = [x+1 for x in range(n)]
+    
+    for _ in range(k-1):
+        for _ in range(n):
+            p = q.pop(0)
+            if p != 1:
+                p = p + pre
+            
+            q.append(p)
+            pre = p
+    return sum(q)
+
 testcase = int(input())
 
 for test in range(testcase):
     k = int(input())
     n = int(input())
+    print(people_sum(k,n))
