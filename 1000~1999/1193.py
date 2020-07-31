@@ -23,7 +23,7 @@ s = 0
 
 while True:
     s += i
-    if s > n:
+    if s >= n:
         break 
     i += 1
 
