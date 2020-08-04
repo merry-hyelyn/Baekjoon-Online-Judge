@@ -17,6 +17,12 @@
 
 a,b,v = map(int, input().split())
 
+day = (v-b)/(a-b)
+print(int(day))
+
+'''
+------TIME OVER-----
+
 day = 0
 
 while True:
@@ -28,5 +34,5 @@ while True:
         break
 
     v = v + b
-
+'''
    
