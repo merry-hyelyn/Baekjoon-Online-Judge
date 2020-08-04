@@ -15,10 +15,11 @@
 # 출력
 # 첫째 줄에 달팽이가 나무 막대를 모두 올라가는데 며칠이 걸리는지 출력한다.
 
+import math
 a,b,v = map(int, input().split())
 
 day = (v-b)/(a-b)
-print(int(day))
+print(math.ceil(day))
 
 '''
 ------TIME OVER-----
