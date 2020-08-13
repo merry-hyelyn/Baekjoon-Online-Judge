@@ -31,7 +31,7 @@
 [9498](https://github.com/merry-hyelyn/Baekjoon-Online-Judge/blob/master/9000~9999/9498.py)
 [10171](https://github.com/merry-hyelyn/Baekjoon-Online-Judge/blob/master/10000~10999/10171.py)
 [10172](https://github.com/merry-hyelyn/Baekjoon-Online-Judge/blob/master/10000~10999/10172.py)
-[10430](https://github.com/merry-hyelyn/Baekjoon-Online-Judge/blob/master/10430.py)
+[10430](https://github.com/merry-hyelyn/Baekjoon-Online-Judge/blob/master/10000~10999/10430.py)
 [10718](https://github.com/merry-hyelyn/Baekjoon-Online-Judge/blob/master/)
 [10817](https://github.com/merry-hyelyn/Baekjoon-Online-Judge/blob/master/)
 [10818](https://github.com/merry-hyelyn/Baekjoon-Online-Judge/blob/master/)
