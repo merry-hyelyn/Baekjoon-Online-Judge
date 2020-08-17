@@ -10,12 +10,8 @@
 # 출력
 # 입력받은 그대로 출력한다.
 
-words = []
 while True:
     w = input()
     if w == "" or w == " ":
         break
-    words.append(w)
-
-for word in words:
-    print(word)
+    print(w)
