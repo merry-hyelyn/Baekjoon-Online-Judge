@@ -13,14 +13,29 @@
 
 # 단, M이상 N이하의 자연수 중 소수가 없을 경우는 첫째 줄에 -1을 출력한다.
 
-m, n = map(int, input().split())
-# num_list = [x for x in range(m,n+1)]
+m = int(input())
+n = int(input())
+
 num_list = []
+count = 0
 
 for num in range(m, n+1):
+    for j in range(2, m):
+        if j**2 > num:
+            break
+
+        else:
+            if num % j == 0:
+                count += 1
+                break
+
+    if count == 0:
+        num_list.append(num)
+
+    count = 0
 
 if num_list:
-    print(sum(num_list), '\n', min(num_list))
+    print(f"{sum(num_list)}\n{min(num_list)}")
 
 else:
     print(-1)
