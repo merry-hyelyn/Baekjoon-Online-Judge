@@ -9,3 +9,15 @@
 # 한 줄에 하나씩, 증가하는 순서대로 소수를 출력한다.
 
 h, n = map(int, input().split())
+
+isPrime = True
+for num in range(h, n+1):
+    for i in range(2, num):
+        if num % i == 0:
+            isPrime = False
+            break
+
+    if isPrime:
+        print(num)
+
+    isPrime = True
