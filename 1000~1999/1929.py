@@ -8,16 +8,15 @@
 # 출력
 # 한 줄에 하나씩, 증가하는 순서대로 소수를 출력한다.
 
+def is_prime(n):
+    for i in range(2, int(n**0.5)+1):
+        if n % i == 0:
+            return False
+    return True
+
+
 h, n = map(int, input().split())
 
-isPrime = True
 for num in range(h, n+1):
-    for i in range(2, num):
-        if num % i == 0:
-            isPrime = False
-            break
-
-    if isPrime:
+    if(is_prime(num)):
         print(num)
-
-    isPrime = True
