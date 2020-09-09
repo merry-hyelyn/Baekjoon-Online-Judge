@@ -13,26 +13,24 @@
 
 # 단, M이상 N이하의 자연수 중 소수가 없을 경우는 첫째 줄에 -1을 출력한다.
 
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5)+1):
+        if num % i == 0:
+            return False
+
+    return True
+
+
 m = int(input())
 n = int(input())
 
 num_list = []
-count = 0
 
 for num in range(m, n+1):
-    for j in range(2, m):
-        if j**2 > num:
-            break
-
-        else:
-            if num % j == 0:
-                count += 1
-                break
-
-    if count == 0:
+    if(is_prime(num)):
         num_list.append(num)
-
-    count = 0
 
 if num_list:
     print(f"{sum(num_list)}\n{min(num_list)}")
