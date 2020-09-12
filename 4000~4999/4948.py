@@ -1,5 +1,6 @@
 # 문제
-# 베르트랑 공준은 임의의 자연수 n에 대하여, n보다 크고, 2n보다 작거나 같은 소수는 적어도 하나 존재한다는 내용을 담고 있다.
+# 베르트랑 공준은 임의의 자연수 n에 대하여,
+# n보다 크고, 2n보다 작거나 같은 소수는 적어도 하나 존재한다는 내용을 담고 있다.
 
 # 이 명제는 조제프 베르트랑이 1845년에 추측했고, 파프누티 체비쇼프가 1850년에 증명했다.
 
@@ -15,23 +16,22 @@
 # 출력
 # 각 테스트 케이스에 대해서, n보다 크고, 2n보다 작거나 같은 소수의 개수를 출력한다.
 
-def is_prime(num):
-    # if num < 2:
-    #     return False
-
-    for i in range(1, int(num**0.5)+1):
-        if num % i == 0:
+def is_prime(n):
+    if n < 1:
+        return False
+    for i in range(2, int(n**0.5)+1):
+        if n % i == 0:
             return False
-        return True
+
+    return True
 
 
 while True:
-    n = int(input())
     count = 0
+    n = int(input())
     if n == 0:
         break
-
-    for num in range(n, 2*n+1):
+    for num in range(n+1, 2*n+1):
         if is_prime(num):
             count += 1
 
