@@ -17,13 +17,15 @@
 # 각 테스트 케이스에 대해서, n보다 크고, 2n보다 작거나 같은 소수의 개수를 출력한다.
 
 def is_prime(n):
-    if n < 1:
-        return False
-    for i in range(2, int(n**0.5)+1):
-        if n % i == 0:
-            return False
+    num_list = [False, False] + [True] * (n-1)
+    result = []
+    for i in range(2, n+1):
+        if num_list[i]:
+            result.append(i)
+            for j in range(i*2, n+1, i):
+                num_list[j] = False
 
-    return True
+    return result
 
 
 while True:
@@ -31,8 +33,6 @@ while True:
     n = int(input())
     if n == 0:
         break
-    for num in range(n+1, 2*n+1):
-        if is_prime(num):
-            count += 1
+    result = is_prime(2 * n)
 
-    print(count)
+    print(len([i for i in result if i > n]))
