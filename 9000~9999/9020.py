@@ -11,14 +11,40 @@
 # 출력
 # 각 테스트 케이스에 대해서 주어진 n의 골드바흐 파티션을 출력한다. 출력하는 소수는 작은 것부터 먼저 출력하며, 공백으로 구분한다.
 
-def prime(n):
-    a = int(n**0.5)
+def make_prime(n):
+    prime_check = [False, False] + [True] * (n - 1)
+
+    for i in range(2, n+1):
+        if prime_check[i]:
+            for j in range(2*i, n+1, i):
+                prime_check[j] = False
+    return prime_check
+
+
+def prime(num):
+    prime_check = make_prime(num)
+    a = int(num/2)
     result = []
-    for j in range(2, a+1):
-        b = n - j
+
+    for i in range(2, a+1):
+        if prime_check[i]:
+            b = num - i
+            if prime_check[b]:
+                if result:
+                    for j, k in result:
+                        if k-j > b-i:
+                            result.pop()
+                            result.append((i, b))
+                else:
+                    result.append((i, b))
+
+    return result
 
 
 t = int(input())
 
-for _ in range(i):
-    prime(n)
+for _ in range(t):
+    n = int(input())
+    result = prime(n)
+
+    print(result[0][0], result[0][1])
