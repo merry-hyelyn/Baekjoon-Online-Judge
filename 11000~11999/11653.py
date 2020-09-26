@@ -17,5 +17,3 @@ while n != 1:
 
     else:
         i += 1
-        n = n / i
-        print(i)
