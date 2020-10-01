@@ -8,6 +8,7 @@
 # 첫째 줄에는 입력으로 주어진 두 수의 최대공약수를, 둘째 줄에는 입력으로 주어진 두 수의 최소 공배수를 출력한다.
 
 a, b = map(int, input().split())
+x, y = a, b
 
 if (b > a):
     a, b = b, a
@@ -17,3 +18,5 @@ while(b != 0):
     a, b = b, a
 
 print(a)
+
+print(int(x * y / a))
