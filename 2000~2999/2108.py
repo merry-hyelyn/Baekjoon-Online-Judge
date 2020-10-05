@@ -25,27 +25,58 @@
 
 # 넷째 줄에는 범위를 출력한다.
 
-import sys
+# import sys
 
-n = int(sys.stdin.readline())
-num = [int(sys.stdin.readline()) for i in range(int(n))]
-num.sort()
-scale = num[-1] - num[0]
-print(round(sum(num) / n))
-print(num[(n // 2)])
+# n = int(sys.stdin.readline())
+# num = [int(sys.stdin.readline()) for i in range(int(n))]
+# num.sort()
+# scale = num[-1] - num[0]
+# print(round(sum(num) / n))
+# print(num[(n // 2)])
 
-m = 0
-mi = []
-for i in num:
-    if num.count(i) >= m:
-        m = num.count(i)
-        num.remove(i)
-        mi.append(i)
+# m = 0
+# mi = []
+# for i in num:
+#     if num.count(i) >= m:
+#         m = num.count(i)
+#         num.remove(i)
+#         mi.append(i)
 
-if len(mi) >= 2:
-    print(mi[1])
+# if len(mi) >= 2:
+#     print(mi[1])
+
+# else:
+#     print(mi[0])
+
+# print(scale)
+
+nums = [int(input()) for _ in range(int(input()))]
+l = len(nums)
+print(round(sum(nums)/l))
+
+nums.sort()
+print(nums[int(l/2)])
+
+num_table = {}
+
+for num in nums:
+    if num in num_table:
+        num_table[num] += 1
+
+    else:
+        num_table[num] = 1
+
+m = max(num_table.values())
+result = []
+
+for k, v in num_table.items():
+    if v == m:
+        result.append(k)
+
+if len(result) > 1:
+    print(result[1])
 
 else:
-    print(mi[0])
+    print(result[0])
 
-print(scale)
+print(nums[l-1] - nums[0])
