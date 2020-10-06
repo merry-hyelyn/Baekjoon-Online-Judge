@@ -50,33 +50,24 @@
 
 # print(scale)
 
-nums = [int(input()) for _ in range(int(input()))]
+import sys
+from collections import Counter
+
+nums = [int(sys.stdin.readline()) for _ in range(int(sys.stdin.readline()))]
 l = len(nums)
 print(round(sum(nums)/l))
 
 nums.sort()
 print(nums[int(l/2)])
 
-num_table = {}
+num = Counter(nums).most_common()
 
-for num in nums:
-    if num in num_table:
-        num_table[num] += 1
+if len(num) > 1:
+    if num[0][1] == num[1][1]:
+        print(num[1][0])
 
     else:
-        num_table[num] = 1
-
-m = max(num_table.values())
-result = []
-
-for k, v in num_table.items():
-    if v == m:
-        result.append(k)
-
-if len(result) > 1:
-    print(result[1])
-
+        print(num[0][0])
 else:
-    print(result[0])
-
+    print(num[0][0])
 print(nums[l-1] - nums[0])
