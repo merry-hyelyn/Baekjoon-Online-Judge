@@ -15,7 +15,7 @@ members = []
 i = 0
 for _ in range(int(input())):
     age, name = input().split()
-    members.append((i, age, name))
+    members.append((i, int(age), name))
     i += 1
 
 members.sort(key=itemgetter(1, 0))
