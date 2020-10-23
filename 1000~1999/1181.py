@@ -14,9 +14,14 @@
 
 from operator import itemgetter
 
-word = [input() for i in range(int(input()))]
-for w in word:
-    if word.count(w) >= 2:
-        word.remove(w)
-word.sort(key=lambda x: len(x))
-print(word)
+words = []
+for _ in range(int(input())):
+    w = input()
+    result = (w, len(w))
+    if result not in words:
+        words.append(result)
+
+words.sort(key=itemgetter(1, 0))
+
+for word in words:
+    print(word[0])
