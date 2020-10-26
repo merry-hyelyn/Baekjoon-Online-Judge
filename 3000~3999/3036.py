@@ -14,15 +14,12 @@
 # 출력
 # 출력은 총 N-1줄을 해야 한다. 첫 번째 링을 제외한 각각의 링에 대해서, 첫 번째 링을 한 바퀴 돌리면 그 링은 몇 바퀴 도는지 기약 분수 형태 A/B로 출력한다.
 
+import fractions
+
 n = int(input())
+nums = list(map(int, input().split()))
 
-rings = list(map(int, input().split()))
+first = nums.pop(0)
 
-first = rings.pop(0)
-
-for ring in rings:
-    if first % ring == 0:
-        print(f"{int(first/ring)}/1")
-
-    else:
-        r = first % ring
+for num in nums:
+    print(fractions.Fraction(first, num))
