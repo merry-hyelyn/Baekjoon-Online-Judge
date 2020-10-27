@@ -22,4 +22,5 @@ nums = list(map(int, input().split()))
 first = nums.pop(0)
 
 for num in nums:
-    print(fractions.Fraction(first, num))
+    result = fractions.Fraction(first, num)
+    print(f"{result.numerator}/{result.denominator}")
