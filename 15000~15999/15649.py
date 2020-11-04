@@ -11,12 +11,10 @@
 # 수열은 사전 순으로 증가하는 순서로 출력해야 한다.
 
 from itertools import permutations
+
 n, m = map(int, input().split())
 
-nums = [x for x in range(1, n+1)]
-num_list = list(permutations(nums, m))
-
-for num in num_list:
-    for i in range(m):
-        print(num[i], end='')
-    print()
+p = permutations(range(1, n+1), m)
+s = list(p)
+for i in s:
+    print(' '.join(map(str, i)))
