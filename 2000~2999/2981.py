@@ -17,17 +17,14 @@
 # 출력
 # 첫째 줄에 가능한 M을 공백으로 구분하여 모두 출력한다. 이때, M은 증가하는 순서이어야 한다.
 
-N = int(input())
-nums = [int(input()) for _ in range(N)]
+from math import gcd
 
-for i in range(nums[0]-2, 1, -1):
-    new = list(map(lambda x: x-i, nums))
-    div = new[0]
-    count = 1
-    for n in new[1:]:
-        if n % div != 0:
-            break
-        else:
-            count += 1
-    if count == N:
-        print(div)
+n = int(input())
+nums = [int(input()) for _ in range(n)]
+gcd_num = []
+
+for i in range(n-1):
+    gcd_num.append(nums[i+1]-nums[i])
+
+for j in range(n-2):
+    prev = gcd(gcd_num[j+1], gcd_num[j])
