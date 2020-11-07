@@ -14,14 +14,11 @@
 # 출력
 # 첫째 줄부터 N번째 줄까지 별을 출력한다.
 
-def print_star(num):
-    if num == 3:
-        star = """***
-        * *
-        ***
-        """
-        return star
-    return print_star(num/3)
+n = int(input())
+count = 0
 
+while n != 3:
+    n = n / 3
+    count += 1
 
-print(print_star(int(input())))
+for _ in range(count):
