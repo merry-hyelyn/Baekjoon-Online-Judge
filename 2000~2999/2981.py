@@ -27,4 +27,17 @@ for i in range(n-1):
     gcd_num.append(nums[i+1]-nums[i])
 
 for j in range(n-2):
-    prev = gcd(gcd_num[j+1], gcd_num[j])
+    if j == 0:
+        factor = gcd(gcd_num[j+1], gcd_num[j])
+    else:
+        factor = gcd(gcd_num[j+1], factor)
+
+result = [factor, ]
+
+for i in range(2, int(factor ** 0.5)+1):
+    if factor % i == 0:
+        result.append(i)
+
+result.sort()
+for r in result:
+    print(r, end=' ')
