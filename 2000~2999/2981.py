@@ -21,6 +21,7 @@ from math import gcd
 
 n = int(input())
 nums = [int(input()) for _ in range(n)]
+nums.sort()
 gcd_num = []
 
 for i in range(n-1):
@@ -36,7 +37,11 @@ result = [factor, ]
 
 for i in range(2, int(factor ** 0.5)+1):
     if factor % i == 0:
-        result.append(i)
+        if i not in result:
+            result.append(i)
+        j = factor // i
+        if j not in result:
+            result.append(j)
 
 result.sort()
 for r in result:
