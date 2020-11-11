@@ -27,7 +27,10 @@ gcd_num = []
 for i in range(n-1):
     gcd_num.append(nums[i+1]-nums[i])
 
-for j in range(n-2):
+if len(gcd_num) == 1:
+    factor = gcd_num[0]
+
+for j in range(len(gcd_num)-1):
     if j == 0:
         factor = gcd(gcd_num[j+1], gcd_num[j])
     else:
