@@ -14,11 +14,8 @@
 # 출력
 # 첫째 줄부터 N번째 줄까지 별을 출력한다.
 
-n = int(input())
-count = 0
+star = ['***', '* *', '***']
 
-while n != 3:
-    n = n / 3
-    count += 1
-
-for _ in range(count):
+print(star[0]*3)
+print(star[1]*3)
+print(star[2]*3)
