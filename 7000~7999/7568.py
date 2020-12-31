@@ -17,25 +17,12 @@
 # 출력
 # 여러분은 입력에 나열된 사람의 덩치 등수를 구해서 그 순서대로 첫 줄에 출력해야 한다. 단, 각 덩치 등수는 공백문자로 분리되어야 한다.
 
-from operator import itemgetter
-
 n = int(input())
-grade = 1
-result = {}
 weight_height = [list(map(int, input().split())) for _ in range(n)]
-sort_wh_list = sorted(weight_height, key=itemgetter(0, 1), reverse=True)
-for i in range(n):
-    index = weight_height.index(sort_wh_list[i])
-    if i == 0:
-        result[index] = grade
-    else:
-        prev_w, prev_h = sort_wh_list[i-1]
-        w, h = sort_wh_list[i]
-        if prev_h >= h:
-            grade = i + 1
-        result[index] = grade
-
-for i, wh in enumerate(weight_height):
-    print(result[i], end='')
-    if i != n-1:
-        print(' ', end='')
+for current in weight_height:
+    rank = 1
+    for nex in weight_height:
+        if current[0] != nex[0] and current[1] != nex[1]:   # 자기 자신 제외
+            if current[0] < nex[0] and current[1] < nex[1]:
+                rank += 1
+    print(rank, end=' ')
